@@ -10,11 +10,8 @@ st.image("https://images.nintendolife.com/561b53fd662d9/pikmin-3-banner.original
 date = st.date_input(
     label="Please select a date",
     value=datetime.date.today(),
-    min_value=None,
-    max_value=None,
-    key=None,
-    help=None,
 )
+
 time = st.time_input(label="Please select a time", value=datetime.time())
 
 pickup_longitude = st.number_input(label="pickup longitude")
@@ -33,7 +30,7 @@ url = "https://phil-benkklhp2a-ew.a.run.app/predict"
 
 params = {
     "key": "whatever",
-    "pickup_datetime": "2001-12-26 12:12:00",
+    "pickup_datetime": str(date) + " " + str(time),
     "pickup_longitude": pickup_longitude,
     "pickup_latitude": pickup_latitude,
     "dropoff_longitude": dropoff_longitude,
