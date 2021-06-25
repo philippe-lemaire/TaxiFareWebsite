@@ -50,7 +50,7 @@ if st.button("push me"):
 
     ## Here is the result
 
-    f" Your fare should be about {pred} dollar"
+    f" Your fare should be about ${pred}."
 
 else:
     "What are you waiting for, push that button!"
