@@ -3,23 +3,10 @@ import datetime
 import requests
 
 """
-# TaxiFareModel front
+# The Pikmin Taxi Company
 """
+st.image("https://images.nintendolife.com/561b53fd662d9/pikmin-3-banner.original.jpg")
 
-st.markdown(
-    """
-Remember that there are several ways to output content into your web page...
-
-Either as with the title by just creating a string (or an f-string). Or as with this paragraph using the `st.` functions
-"""
-)
-
-"""
-## Here we would like to add some controllers in order to ask the user to select the parameters of the ride
-
-1. Let's ask for:
-
-"""
 date = st.date_input(
     label="Please select a date",
     value=datetime.date.today(),
@@ -58,11 +45,16 @@ params = {
     "passenger_count": passenger_count,
 }
 
-response = requests.get(url, params)
+if st.button("push me"):
 
-pred = response.json()["prediction"]
-pred = round(pred, 2)
+    response = requests.get(url, params)
 
-## Here is the result
+    pred = response.json()["prediction"]
+    pred = round(pred, 2)
 
-f" Your fare should be about {pred} dollar"
+    ## Here is the result
+
+    f" Your fare should be about {pred} dollar"
+
+else:
+    "What are you waiting for, push that button!"
