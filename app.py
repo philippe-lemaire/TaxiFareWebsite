@@ -26,10 +26,6 @@ passenger_count = st.slider(
     min_value=1,
     max_value=5,
     value=1,
-    step=None,
-    format=None,
-    key=None,
-    help=None,
 )
 
 
